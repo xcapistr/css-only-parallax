@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+}
+
+.parallaxContainer {
+  /* Fill the available space */
+  height: 100vh;
+
+  /* Make the children of the element closer to the viewport */
+  perspective: 2px;
+
+  /* Hide the overflow */
+  overflow-x: hidden;
+}
+
+.background {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.background::after {
+  /* Position the pseudo-element to fill the parent */
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Scale the image to full */
+  background-size: cover;
+
+  /* Move the element back then scale the element, it helps to appears more slowly */
+  transform: translateZ(-1px) scale(1.7);
+
+  /* Set the parallax section before the other elements. */
+  z-index: -1;
+}
+
+#background1::after {
+  background-image: url('https://images.unsplash.com/photo-1605025181048-b54579ef54e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+}
+
+#background2::after  {
+  background-image: url('https://images.unsplash.com/photo-1605123181115-37293f5dd78f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+}
+
+#background3::after  {
+  background-image: url('https://images.unsplash.com/photo-1605121116474-81866646827b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3302&q=80');
+}
+
+#background4::after  {
+  background-image: url('https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+}
+
+.section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.section > h2 {
+  /* Move the element back then scale the element, it helps to appears more slowly */
+  transform: translateZ(0.5px) scale(0.8);
+
+  /* Set the parallax section before the other elements. */
+  z-index: 1;
+}
+
+#section1 {
+  background-color: burlywood;
+}
+
+#section2 {
+  background-color: cadetblue;
+}
+
+#section3 {
+  background-color: forestgreen;
+}
+
+#section4 {
+  background-color: peru;
+}
+
+#section5 {
+  background-color: lightskyblue;
+}
